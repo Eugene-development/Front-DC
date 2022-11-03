@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  app:
+    image: ...:latest
+    container_name: "..._PROJECT"
+    restart: always
+
+  nginx:
+    image: nginx:1.13
+    container_name: "..._NGINX"
+    ports:
+      - "...:80"
+    volumes:
+      - ./:/var/www
+      - ./nginx/conf.d/:/etc/nginx/conf.d/
+    depends_on:
+      - app
