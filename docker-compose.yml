@@ -2,15 +2,15 @@ version: "3"
 
 services:
   app:
-    image: larux/...:latest
-    container_name: "..._PROJECT"
+    image: larux/zovmsk:12092023
+    container_name: "${COMPOSE_PROJECT_NAME}_PROJECT"
     restart: always
 
   nginx:
     image: nginx:alpine
-    container_name: "..._NGINX"
+    container_name: "${COMPOSE_PROJECT_NAME}_NGINX"
     ports:
-      - "...:80"
+      - "9876:80"
     volumes:
       - ./:/var/www
       - ./nginx/conf.d/:/etc/nginx/conf.d/
