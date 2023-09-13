@@ -2,7 +2,7 @@ version: "3"
 
 services:
   app:
-    image: larux/zovmsk:030623
+    image: larux/zovmsk:13092023
     container_name: "${COMPOSE_PROJECT_NAME}_PROJECT"
     restart: always
     ports:
