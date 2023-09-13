@@ -2,7 +2,7 @@ version: "3"
 
 services:
   app:
-    image: larux/zovmsk:13092023
+    image: ${REGISTRY}/${PROJECT}:${IMAGE_TAG}
     container_name: "${COMPOSE_PROJECT_NAME}_PROJECT"
     restart: always
 
@@ -10,7 +10,7 @@ services:
     image: nginx:alpine
     container_name: "${COMPOSE_PROJECT_NAME}_NGINX"
     ports:
-      - "9958:80"
+      - "${PORT}:80"
     volumes:
       - ./:/var/www
       - ./nginx/conf.d/:/etc/nginx/conf.d/
